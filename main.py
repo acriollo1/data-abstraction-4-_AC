@@ -20,20 +20,22 @@ books = soup.find_all(id="gridItemRoot")
 
 book = books[0]
 
-rank = book.find('span', class_='zg-bdg-text').text[1:]
+for book in books:
 
-children = book.find('div', class_="zg-grid-general-faceout").div
-children.contents[0]
-
-#title = book.find('div', class_="_cDEzb_p13n-sc-css-line-clamp-1_1Fn1y")
-title = children.contents[1].text
-author = children.contents[2].text
-price = children.contents[-1].text
-
-print(price)
-print(author)
-print(title)
-print(rank)
+  rank = book.find('span', class_='zg-bdg-text').text[1:]
+  
+  children = book.find('div', class_="zg-grid-general-faceout").div
+  children.contents[0]
+  
+  #title = book.find('div', class_="_cDEzb_p13n-sc-css-line-clamp-1_1Fn1y")
+  title = children.contents[1].text
+  author = children.contents[2].text
+  price = children.contents[-1].text
+  
+  print(price)
+  print(author)
+  print(title)
+  print(rank)
 
 # print(books[0].prettify())
 
